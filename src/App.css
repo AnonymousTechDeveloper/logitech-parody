@@ -24,6 +24,8 @@
 	user-select: none;
 }
 
+html {overflow-x: hidden;}
+
 .title-bar {
 	color: #697172;
 	height: 48px;
