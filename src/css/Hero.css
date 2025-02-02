@@ -1,0 +1,48 @@
+.hero-section-wrapper {
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    /* z-index: -2; */
+}
+
+.hero-static-content {
+    height: 100%;
+    position: relative;
+    width: calc(100% - 80px);
+    margin: auto;
+    padding: 0px 40px;
+    max-width: var(--max-body-width);
+}
+
+.hero-section {
+    height: 561px;
+    /* aspect-ratio: 1.777778; /* 1920/1080 ratio */
+}
+
+.navbar-search {
+    font-family: var(--main-font-light);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    width: 41.6667%;
+}
+
+.hero-title h1 {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 1;
+    font-family: var(--main-font-bold);
+    margin: 0px;
+}
+
+.hero-desc p {
+    color: #ffffff;
+    font-family: var(--main-font-light);
+    font-size: 18px;
+    margin: 0px;
+}

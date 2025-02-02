@@ -1,0 +1,23 @@
+.shop-series-section {
+    width: 100%;
+    background-color: #f4f4f4;
+    margin: 45px 0px;
+}
+
+.shop-series-container {
+    margin: auto;
+    padding: 0px 40px;
+    max-width: var(--max-body-width);
+}
+
+.shop-series-title {
+    text-transform: uppercase;
+    color: var(--main-color-dark);
+    font-family: var(--main-font-bold);
+    text-align: center;
+    font-size: 36px;
+}
+
+.shop-series-tile-grid {
+    
+}

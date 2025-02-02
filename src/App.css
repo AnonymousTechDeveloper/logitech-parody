@@ -1,0 +1,123 @@
+@font-face {
+	font-family: 'lineto';
+	src: url('./fonts/lineto-brown-pro-regular.woff');
+}
+
+@font-face {
+	font-family: 'lineto-light';
+	src: url('./fonts/lineto-brown-pro-light.woff');
+
+}
+@font-face {
+	font-family: 'lineto-bold';
+	src: url('./fonts/lineto-brown-pro-bold.woff');
+}
+
+:root {
+	--max-body-width: 1200px;
+	--main-font-regular: 'lineto';
+	--main-font-light: 'lineto-light';
+	--main-font-bold: 'lineto-bold';
+	--main-color-light: #ffffff;
+	--main-color-dark: #2f3132;
+	--inactive-elem-color: #c1c6c9;
+}
+
+.title-bar {
+	color: #697172;
+	height: 48px;
+	padding: 0px 40px;
+	margin: auto;
+	width: calc(100% - 80px);
+    max-width: var(--max-body-width);
+	display: flex;
+	justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.title-bar-section {
+	height: 100%;
+	display: flex;
+	gap: 15px;
+	cursor: pointer;
+}
+
+.brand-ddown-trigger-text {
+	font-family: var(--main-font-light);
+}
+.brand-ddown-trigger-text span:nth-child(1) {padding-right: 9px;}
+
+.brand-ddown-trigger span {font-size: 14px;}
+
+.loc-changer {
+	vertical-align: middle;
+	font-family: var(--main-font-bold);
+	font-size: 14px;
+}
+
+.globe-icon {
+	color: white;
+	background-color: #697172;
+	border-radius: 100%;
+	font-size: 15px;
+}
+
+.loc-changer:hover :nth-last-of-type(1) {text-decoration: underline;}
+.loc-changer :nth-of-type(1) {margin-right: 3px;}
+
+.brand-ddown {
+	position: absolute;
+	background-color: var(--main-color-light);
+	width: 100%;
+	top: 100%;
+	display: flex;
+	flex-direction: column;
+	font-size: 0px;
+	z-index: 10;
+}
+
+.brand-ddown-item {
+	height: 36px;
+	width: 100%;
+	border: 1px solid #eaeaea6d;
+}
+
+.brand-ddown img {
+	display: block;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.title-bar .icon {
+	transform: translateY(20%);
+}
+
+.y-centered {
+	display: inline-block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.hero-button-container {
+	display: flex;
+	gap: 18px;
+}
+
+.theme-button {
+	color: var(--main-color-dark);
+	font-family: var(--main-font-bold);
+	background-color: var(--main-color-light);
+	border: 1px solid var(--main-color-light);
+	font-size: 14px;
+	padding: 18px 36px;
+	transition: all 0.3s;
+
+	&:hover {
+		color: var(--main-color-light);
+		background-color: transparent;
+	}
+}

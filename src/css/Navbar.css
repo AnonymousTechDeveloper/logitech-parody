@@ -1,0 +1,128 @@
+.navbar-main {
+    height: 90px;
+    width: 100%;
+}
+.fixed-navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0 0 6px #0000003d;
+    background-color: var(--main-color-light);
+    z-index: 100;
+}
+.contained-navbar {
+    position: absolute;
+    z-index: 1;
+    color: var(--main-color-light);
+}
+
+.navbar-content-wrapper {
+    height: 100%;
+    width: calc(100% - 80px);
+    max-width: var(--max-body-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
+
+.navbar-logo-container, .navbar-search-container {height: 100%;}
+
+.navbar-logo {
+    height: 36px;
+    width: 118px;
+    background-position: -1px -1276px;
+    background-size: 120px 1312px;
+}
+.navbar-logo-play {animation: logo-anim 1.2s steps(34) 0s forwards;}
+@keyframes logo-anim {
+    from {background-position: -1px -1px;}
+    to {background-position: -1px -1276px;}
+}
+
+.navbar-tablist-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-tab-container {
+    height: 100%;
+}
+
+.navbar-tab {
+    font-family: var(--main-font-bold);
+    font-size: 15px;
+    border-radius: 18px;
+    padding: 9px 20px;
+    transition: color 0.5s;
+}
+.navbar-tab:hover {
+    color: var(--main-color-dark);
+    background-color: var(--main-color-light);
+}
+
+.navbar-other-container {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-search-icon {
+    position: relative;
+    font-size: 18px;
+}
+
+.navbar-search {
+    background-color: transparent;
+    padding-right: 45px;
+    font-family: var(--main-font-light);
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.navbar-searchbox {
+    background-color: #ffffff4d;
+    border-radius: 18px;
+    padding: 6px 13px;
+    display: flex;
+}
+
+.nav-user-icon {
+    position: relative;
+    top: 3px;
+    font-size: 18px;
+}
+
+.navbar-search-container {
+    background-color: var(--main-color-light);
+    height: 100%;
+    border: 2px solid #ede9e8;
+}
+
+.navbar-search-wrapper {
+    height: 100%;
+    display: flex;
+    gap: 18px;
+    padding: 0px 40px;
+    width: var(--max-body-width);
+    margin: auto;
+}
+
+.navbar-search-input {
+    color: var(--main-color-dark);
+    border: 0px;
+    height: 100%;
+    font-family: var(--main-font-bold);
+    font-size: 20px;
+    flex-grow: 1;
+    &:focus {outline: 0px;}
+    &::placeholder {color: var(--inactive-elem-color)}
+}
+
+.nav-close-icon {
+    height: 100%;
+    padding: 0px 9px;
+    font-size: 24px;
+    color: var(--inactive-elem-color);
+    &:hover {color: var(--main-color-dark);}
+}
