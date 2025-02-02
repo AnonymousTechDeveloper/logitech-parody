@@ -25,9 +25,9 @@ function App() {
 					<span onMouseEnter={() => settitleBarLogoHovered(1)} onMouseLeave={() => settitleBarLogoHovered(0)}>
 						{
 							titleBarLogoHovered ? 
-							<img className='y-centered' src='/icons/logitechg.svg'></img>
+							<img className='y-centered' src='./icons/logitechg.svg'></img>
 							: 
-							<img className='y-centered' src='/icons/logitechg-grey.svg'></img>
+							<img className='y-centered' src='./icons/logitechg-grey.svg'></img>
 						}
 					</span>
 					<hr />
@@ -48,17 +48,17 @@ function App() {
 								<div className="brand-ddown-item" onMouseEnter={() => setBrandDDSteamLabsLogoHovered(1)} onMouseLeave={() => setBrandDDSteamLabsLogoHovered(0)}>
 									{
 										brandDDSteamLabsLogoHovered ? 
-										<img src='/icons/streamlabs.svg'></img> 
+										<img src='./icons/streamlabs.svg'></img> 
 										:
-										<img src='/icons/streamlabs-grey.svg'></img>
+										<img src='./icons/streamlabs-grey.svg'></img>
 									}
 								</div>
 								<div className="brand-ddown-item" onMouseEnter={() => setBrandDDUltimateEarsLogoHovered(1)} onMouseLeave={() => setBrandDDUltimateEarsLogoHovered(0)}>
 									{
 										brandDDUltimateEarsLogoHovered ? 
-										<img src='/icons/ultimate-ears.svg'></img> 
+										<img src='./icons/ultimate-ears.svg'></img> 
 										:
-										<img src='/icons/ultimate-ears-grey.svg'></img>
+										<img src='./icons/ultimate-ears-grey.svg'></img>
 									}
 								</div>
 							</div> : null
