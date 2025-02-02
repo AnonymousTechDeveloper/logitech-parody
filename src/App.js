@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { updateObjectState } from './js/common';
@@ -8,14 +8,31 @@ import Hero from './components/Hero';
 import ShopOptions from './components/ShopOptions';
 import ProductHighlights from './components/ProductHighlights';
 import ShopSeries from './components/ShopSeries';
+import ProductHighlightsMobile from './components/ProductHighlightsMobile';
 
 function App() {
 
 	//const [navbarState, setNavbarState] = useState(1);
+	const mobileBreakpointWidth = 715;
 	const [titleBarLogoHovered, settitleBarLogoHovered] = useState(0);
 	const [brandDDSteamLabsLogoHovered, setBrandDDSteamLabsLogoHovered] = useState(0);
 	const [brandDDUltimateEarsLogoHovered, setBrandDDUltimateEarsLogoHovered] = useState(0);
 	const [brandsDDState, setBrandDDState] = useState(0);
+	const [mobileView, setMobileView] = useState(window.innerWidth < mobileBreakpointWidth ? 1 : 0);
+
+	function resizehandler() {
+		const windowWidth = window.innerWidth;
+		if (windowWidth < mobileBreakpointWidth) {
+			if (mobileView == 1) return;
+			setMobileView(1);
+		}
+		else if (mobileView == 1) setMobileView(0);
+	}
+
+	useEffect(() => {
+		window.addEventListener("resize", resizehandler);
+		return () => window.removeEventListener("resize", resizehandler);
+	})
 
     return (
         <div className="App">
@@ -74,7 +91,12 @@ function App() {
 			</div>
 			<Hero />
 			<ShopOptions />
-			<ProductHighlights />
+			{
+				mobileView == 1 ? 
+					<ProductHighlightsMobile />
+					: 
+					<ProductHighlights />
+			}
 			<ShopSeries />
         </div>
     );

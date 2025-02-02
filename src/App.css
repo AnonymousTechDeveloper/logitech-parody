@@ -21,6 +21,7 @@
 	--main-color-light: #ffffff;
 	--main-color-dark: #2f3132;
 	--inactive-elem-color: #c1c6c9;
+	user-select: none;
 }
 
 .title-bar {

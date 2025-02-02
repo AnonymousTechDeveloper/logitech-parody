@@ -7,6 +7,9 @@
     justify-content: center;
     gap: 18px;
 }
+@media (max-width: 715px) {
+    .shop-options-container {grid-template-columns: 1fr;}
+}
 
 .shop-option-card {
     & a {text-decoration: none;}

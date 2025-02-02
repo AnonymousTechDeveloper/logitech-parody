@@ -4,4 +4,10 @@ function updateObjectState(state, key, value) {
     return newObj;
 }
 
-export {updateObjectState};
+function updateObjectListState(state, index, key, value) {
+    const newList = [...state];
+    newList[index][key] = value;
+    return newList;
+}
+
+export {updateObjectState, updateObjectListState};
