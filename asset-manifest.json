@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/logitech-parody/static/css/main.e39e588d.css",
-    "main.js": "/logitech-parody/static/js/main.78fcc274.js",
+    "main.css": "/logitech-parody/static/css/main.f7469f58.css",
+    "main.js": "/logitech-parody/static/js/main.c458eeba.js",
     "static/js/488.02eb4d06.chunk.js": "/logitech-parody/static/js/488.02eb4d06.chunk.js",
     "static/media/hero-bg-desktop.jpg": "/logitech-parody/static/media/hero-bg-desktop.5fd2763aff3cadd99548.jpg",
     "static/media/lineto-brown-pro-bold.woff": "/logitech-parody/static/media/lineto-brown-pro-bold.c0a8b3b232cd2c75270f.woff",
@@ -72,12 +72,12 @@
     "static/media/mx-keys-s-combo-keyboard-front-view-graphite-us.webp": "/logitech-parody/static/media/mx-keys-s-combo-keyboard-front-view-graphite-us.b9b1ef96a7404c06287e.webp",
     "static/media/mx-mechanical-keyboard-top-view-graphite-us.webp": "/logitech-parody/static/media/mx-mechanical-keyboard-top-view-graphite-us.8a099662f77dd831387b.webp",
     "index.html": "/logitech-parody/index.html",
-    "main.e39e588d.css.map": "/logitech-parody/static/css/main.e39e588d.css.map",
-    "main.78fcc274.js.map": "/logitech-parody/static/js/main.78fcc274.js.map",
+    "main.f7469f58.css.map": "/logitech-parody/static/css/main.f7469f58.css.map",
+    "main.c458eeba.js.map": "/logitech-parody/static/js/main.c458eeba.js.map",
     "488.02eb4d06.chunk.js.map": "/logitech-parody/static/js/488.02eb4d06.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e39e588d.css",
-    "static/js/main.78fcc274.js"
+    "static/css/main.f7469f58.css",
+    "static/js/main.c458eeba.js"
   ]
 }
