@@ -1,7 +1,7 @@
 .shop-series-section {
     width: 100%;
     background-color: #f4f4f4;
-    margin: 45px 0px;
+    padding: 45px 0px;
 }
 
 .shop-series-container {
@@ -19,5 +19,48 @@
 }
 
 .shop-series-tile-grid {
-    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 18px;
+    width: 100%;
+}
+
+.shop-series-tile {
+    background-position: center;
+    background-size: contain;
+    &:nth-last-child(1) {grid-column: span 2;}
+    position: relative;
+}
+
+.shop-series-img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.shop-series-img-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #00000011;
+    transition: background-color 0.3s;
+    &:hover {background-color: #000000bd;}
+    &:hover p {display: block;}
+    & > div {width: 100%;}
+}
+
+
+.shop-series-img-title {
+    text-align: center;
+    color: var(--main-color-light);
+    font-family: var(--main-font-bold);
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.shop-series-img-desc {
+    text-align: center;
+    color: var(--main-color-light);
+    padding: 0px 60px;
+    display: none;
 }
