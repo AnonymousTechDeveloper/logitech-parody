@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/logitech-parody/static/css/main.66965169.css",
-    "main.js": "/logitech-parody/static/js/main.e68b6f64.js",
+    "main.js": "/logitech-parody/static/js/main.ebaf4c7d.js",
     "static/js/488.02eb4d06.chunk.js": "/logitech-parody/static/js/488.02eb4d06.chunk.js",
     "static/media/carousel_image_tablet5.jpg": "/logitech-parody/static/media/carousel_image_tablet5.52befa9f62f3ec5972aa.jpg",
     "static/media/carousel_image_desktop8.jpg": "/logitech-parody/static/media/carousel_image_desktop8.ec47d3798bdaeba6251c.jpg",
@@ -105,11 +105,11 @@
     "static/media/pcr-icon.webp": "/logitech-parody/static/media/pcr-icon.cc5de99f15521d5338ff.webp",
     "index.html": "/logitech-parody/index.html",
     "main.66965169.css.map": "/logitech-parody/static/css/main.66965169.css.map",
-    "main.e68b6f64.js.map": "/logitech-parody/static/js/main.e68b6f64.js.map",
+    "main.ebaf4c7d.js.map": "/logitech-parody/static/js/main.ebaf4c7d.js.map",
     "488.02eb4d06.chunk.js.map": "/logitech-parody/static/js/488.02eb4d06.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66965169.css",
-    "static/js/main.e68b6f64.js"
+    "static/js/main.ebaf4c7d.js"
   ]
 }
