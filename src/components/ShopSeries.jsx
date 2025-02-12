@@ -46,10 +46,10 @@ function ShopSeries({mobileView}) {
 	const handleSwipe = (event) => {
 		const container = event.currentTarget;
 		const swipeThreshold = 100;
-		const initialXPos = event.clientX;
+		const initialXPos = event.clientX || event.touches[0].clientX;
 
 		const handleSwipeEnd = (event) => {
-			const finalXPos = event.x;
+			const finalXPos = event.x || event.changedTouches[0].clientX;
 			const deltaX = finalXPos - initialXPos;
 			
 			if (deltaX > swipeThreshold) {
@@ -59,14 +59,15 @@ function ShopSeries({mobileView}) {
 				if (activePage < numberOfActivePagesMobile - 1) setActivePage(activePage + 1);
 			}
 		}
-		container.addEventListener("mouseup", handleSwipeEnd, {once: true})
+		container.addEventListener("mouseup", handleSwipeEnd, {once: true});
+		container.addEventListener("touchend", handleSwipeEnd, {once: true});
 	}
 
 	return (
 		<div className='shop-series-section'>
 			<div className='shop-series-container'>
 				<h1 className='shop-series-title'>Shop Series</h1>
-				<div className='shop-series-tile-grid-wrapper' onMouseDown={handleSwipe}>
+				<div className='shop-series-tile-grid-wrapper' onMouseDown={handleSwipe} onTouchStart={handleSwipe}>
 					<div className='shop-series-tile-grid'>
 						{
 							tileData.map((tile, index, tileDataList) => 

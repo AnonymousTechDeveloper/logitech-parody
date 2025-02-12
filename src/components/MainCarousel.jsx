@@ -12,7 +12,7 @@ function MainCarousel( {mobileView, tabletView} ) {
 		const item = event.currentTarget;
 		const itemNext = document.getElementsByClassName("carousel-item")[activeItemIndex + 1];
 		const itemPrev = document.getElementsByClassName("carousel-item")[activeItemIndex - 1];
-		const initialXPos = event.clientX;
+		const initialXPos = event.clientX || event.touches[0].clientX;
 		const swipeXThreshold = 100;
 
 		item.style.transition = "";
@@ -23,13 +23,14 @@ function MainCarousel( {mobileView, tabletView} ) {
 
 		const handleSwipeEnd = (event) => {
 			item.removeEventListener("mousemove", handleSwipeMovement);
+			item.removeEventListener("touchmove", handleSwipeMovement);
 			item.style.transition = "transform 0.5s ease-in-out";
 			try {
 				itemNext.style.transition = "transform 0.5s ease-in-out";
 				itemPrev.style.transition = "transform 0.5s ease-in-out";
 			} catch {}
 
-			const finalXPos = event.x;
+			const finalXPos = event.x || event.changedTouches[0].clientX;
 			const deltaX = finalXPos - initialXPos;
 
 			if (deltaX > swipeXThreshold) 
@@ -41,15 +42,18 @@ function MainCarousel( {mobileView, tabletView} ) {
 			else item.style.transform = `translateX(0%)`;		}
 
 		const handleSwipeMovement = (event) => {
-			item.style.transform = `translateX(${event.x - initialXPos}px)`;
+
+			item.style.transform = `translateX(${(event.x || event.touches[0].clientX) - initialXPos}px)`;
 			try {
-				itemNext.style.transform = `translateX(${event.x - initialXPos + item.clientWidth}px)`;
-				itemPrev.style.transform = `translateX(${event.x - initialXPos - item.clientWidth}px)`;
+				itemNext.style.transform = `translateX(${(event.x || event.touches[0].clientX) - initialXPos + item.clientWidth}px)`;
+				itemPrev.style.transform = `translateX(${(event.x || event.touches[0].clientX) - initialXPos - item.clientWidth}px)`;
 			} catch {}
 		}
 
 		item.addEventListener("mouseup", handleSwipeEnd, {once: true});
+		item.addEventListener("touchend", handleSwipeEnd, {once: true});
 		item.addEventListener("mousemove", handleSwipeMovement);
+		item.addEventListener("touchmove", handleSwipeMovement);
 		item.addEventListener("mouseleave", handleSwipeEnd, {once: true});
 	}
 
@@ -65,7 +69,7 @@ function MainCarousel( {mobileView, tabletView} ) {
 								zIndex: index == activeItemIndex ? 2 : Math.abs(index - activeItemIndex) === 1 ? 1 : 0,
 								transform: index == activeItemIndex ? 'translateX(0)' : index > activeItemIndex ? 'translateX(100%)' : 'translateX(-100%)',
 							}}
-							onMouseDown={handleSwipe}>
+							onMouseDown={handleSwipe} onTouchStart={handleSwipe}>
 							<div className={`caro-item-content ${item.theme == 1 ? 'dark' : null} ${item.theme == 2 ? 'carbon' : null}`}>
 								{
 									item.logoURL ? 

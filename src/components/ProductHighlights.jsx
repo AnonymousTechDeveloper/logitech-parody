@@ -41,9 +41,9 @@ function ProductHighlights() {
 	};
 
 	//TODO: Do something of this shit 
-	const scrollHandler = (event, activeTabIndex) => {
+	const scrollHandler = (event) => {
 		const container = event.currentTarget;
-		const initialXPos = event.clientX;
+		const initialXPos = event.clientX || event.touches[0].clientX;
 		const containerScrollLeft = container.scrollLeft;
 		const xThreshold = 100;
 		const syncContainerMouse = (event) => {
@@ -53,7 +53,7 @@ function ProductHighlights() {
 		}
 		const scrollEndHandler = (event) => {
 			container.removeEventListener("mousemove", syncContainerMouse);
-			const finalXPos = event.x;
+			const finalXPos = event.x || event.changedTouches[0].clientX;
 			const deltaX = finalXPos - initialXPos;
 			if (deltaX > xThreshold) {
 				const tempActivePageList = [...activePageList];
@@ -70,9 +70,7 @@ function ProductHighlights() {
 
 		//container.addEventListener("mousemove", syncContainerMouse);
 		container.addEventListener("mouseup", scrollEndHandler, {once: true})
-		container.addEventListener("mouseleave", (event) => {
-			container.removeEventListener("movemove", syncContainerMouse);
-		}, {once: true});
+		container.addEventListener("mouseleave", scrollEndHandler, {once: true});
 	}
 
 	return (
@@ -95,7 +93,7 @@ function ProductHighlights() {
 						)
 					}
 				</div>
-				<div className='product-hls-tab-content' onMouseDown={(event) => scrollHandler(event, activeTabIndex)}>
+				<div className='product-hls-tab-content' onTouchStart={scrollHandler} onMouseDown={scrollHandler} >
 					{
 						renderProductList.map((product, prodIndex, prodList) => 
 							<div className='product-hls-card'>
