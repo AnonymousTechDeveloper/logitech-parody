@@ -6,7 +6,7 @@ import image3 from '../images/mx-for-coders-vertical-gallery-desktop-d.webp';
 import image4 from '../images/mx-for-creatives-horizontal-gallery-desktop-f.webp';
 import image5 from '../images/on-the-go-horizontal-gallery-desktop-e.webp';
 
-function ShopSeries() {
+function ShopSeries({mobileView}) {
 
 	const tileData = [
 		{
@@ -35,36 +35,67 @@ function ShopSeries() {
 			imageURL: image5,
 		},
 	]
-
-	const [activePages, setActivePage] = useState(1);
-
+	
+	const numberOfActivePagesMobile = 2;
+	const [activePage, setActivePage] = useState(0);
 	useEffect(() => {
-		window.addEventListener("resize", () => {
+		const gridContainer = document.getElementsByClassName("shop-series-tile-grid-wrapper")[0];
+		gridContainer.scrollTo({left: activePage*(gridContainer.clientWidth + 18), behavior: "smooth"})
+	}, [activePage])
 
-		})	
+	const handleSwipe = (event) => {
+		const container = event.currentTarget;
+		const swipeThreshold = 100;
+		const initialXPos = event.clientX;
 
-		window.removeEventListener("resize", this)
-	})
+		const handleSwipeEnd = (event) => {
+			const finalXPos = event.x;
+			const deltaX = finalXPos - initialXPos;
+			
+			if (deltaX > swipeThreshold) {
+				if (activePage > 0) setActivePage(activePage - 1);
+			}
+			else if (deltaX < swipeThreshold) {
+				if (activePage < numberOfActivePagesMobile - 1) setActivePage(activePage + 1);
+			}
+		}
+		container.addEventListener("mouseup", handleSwipeEnd, {once: true})
+	}
 
 	return (
 		<div className='shop-series-section'>
 			<div className='shop-series-container'>
 				<h1 className='shop-series-title'>Shop Series</h1>
-				<div className='shop-series-tile-grid'>
-					{
-						tileData.map((tile, index, tileDataList) => 
-							<div className='shop-series-tile'>
-								<img className='shop-series-img' src={tileData[index].imageURL}></img>
-								<div className='shop-series-img-overlay'>
-									<div className='y-centered'>
-										<div className="shop-series-img-title">{tileData[index].title}</div>
-										<p className='shop-series-img-desc'>{tileData[index].description}</p>
+				<div className='shop-series-tile-grid-wrapper' onMouseDown={handleSwipe}>
+					<div className='shop-series-tile-grid'>
+						{
+							tileData.map((tile, index, tileDataList) => 
+								<div className='shop-series-tile'>
+									<img className='shop-series-img' src={tileData[index].imageURL}></img>
+									<div className='shop-series-img-overlay'>
+										<div className='y-centered'>
+											<div className="shop-series-img-title">{tileData[index].title}</div>
+											<p className='shop-series-img-desc'>{tileData[index].description}</p>
+										</div>
 									</div>
 								</div>
-							</div>
-						)
-					}
+							)
+						}
+					</div>
 				</div>
+				{
+					mobileView ?
+					<div className='shop-series-scroller-container'>
+						{
+							Array(numberOfActivePagesMobile).fill().map((value, index, list) => 
+								<div 
+									className={`scroller-dot ${index == activePage ? 'active-page' : null}`}
+									onClick={() => setActivePage(index)}
+								></div>
+							)
+						}
+					</div> : null
+				}
 			</div>
 		</div>
 	)

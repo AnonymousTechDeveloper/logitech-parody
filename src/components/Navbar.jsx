@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import '../css/Navbar.css'
 import navLogoLight from '../images/logi-logo-anim-light.png'
-import { CiSearch } from 'react-icons/ci';
 import { FiSearch } from 'react-icons/fi';
 import { RiCloseLargeLine, RiUserLine } from 'react-icons/ri';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-function Navbar() {
+function Navbar({setSideMenuState}) {
 
 	const [mainLogoClass, setMainLogoClass] = useState('navbar-logo');
 	const [searchFieldState, setSearchFieldState] = useState(0);
@@ -23,6 +23,11 @@ function Navbar() {
 				</div>
 				:
 				<div className='navbar-content-wrapper'>
+					<div className='navbar-menu-container'>
+						<div className='navbar-menu-button y-centered' onclick={() => setSideMenuState(1)}>
+							<GiHamburgerMenu className='navbar-menu-icon' />
+						</div>
+					</div>
 					<div className='navbar-logo-container'>
 						<div className='y-centered'>
 							<div className={mainLogoClass} onMouseEnter={() => {

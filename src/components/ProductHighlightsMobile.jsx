@@ -34,7 +34,7 @@ function ProductHighlightsMobile() {
                             <div className='product-hlts-mobile-tab-icon'>
                                 {
                                     tab.tabActive ? 
-                                    <FaPlus /> : <FaMinus />
+                                    <FaMinus /> : <FaPlus />
                                 }
                             </div>
                         </div>

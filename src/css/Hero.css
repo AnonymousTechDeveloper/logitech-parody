@@ -46,3 +46,25 @@
     font-size: 18px;
     margin: 0px;
 }
+
+@media (max-width: 1025px) {
+    .hero-section-wrapper {background-position: 0px 75%;}
+    .hero-title h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+    .hero-desc p {
+        font-size: 20px;
+        text-align: center;
+    }
+    .hero-content {
+        width: 100%;
+        top: 81px;
+        transform: none;
+    }
+    .hero-button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

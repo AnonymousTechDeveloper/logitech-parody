@@ -1,0 +1,106 @@
+.main-carousel {
+    position: relative;
+    height: 607px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 607px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.caro-item-content {
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    color: var(--main-color-light);
+    font-family: var(--main-font-bold);
+    &.dark {color: var(--main-color-dark);}
+    &.dark .caro-item-button {
+        background-color: var(--main-color-dark);
+        border: 2px solid var(--main-color-dark);
+        color: var(--main-color-light);
+        &:hover {
+            background-color: transparent;
+            color: var(--main-color-dark);
+        }
+    }
+    &.carbon .caro-item-button {
+        background-color: #dcfd00;
+        border: 2px solid #dcfd00;
+        &:hover {
+            background-color: transparent;
+            color: #dcfd00;
+        }
+    }
+}
+
+.caro-item-logo {
+    width: 214px;
+    display: block;
+    margin: 0px auto;
+    position: relative;
+    top: 18px;
+}
+
+.caro-item-tag {
+    text-align: center;
+}
+
+.caro-item-title {
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.caro-item-desc {
+    text-align: center;
+    font-family: var(--main-font-bold);
+    font-size: 22px;
+}
+.caro-button-container a {
+    display: block; 
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.caro-item-button {
+    border: 2px solid var(--main-color-light);
+    text-transform: uppercase;
+}
+
+.carousel-slider-container {
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    width: 100%;
+    top: calc(607px - 45px);
+
+    &.light .scroller-dot {
+        background-color: var(--main-color-light);
+        &.active-page {
+            border: 3px solid var(--main-color-light);
+            background-color: transparent;
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .caro-item-title {font-size: 36px;}
+    .caro-item-desc {font-size: 16px;}
+}

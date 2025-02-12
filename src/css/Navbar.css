@@ -126,3 +126,29 @@
     color: var(--inactive-elem-color);
     &:hover {color: var(--main-color-dark);}
 }
+
+.navbar-menu-icon {
+    display: none;
+    font-size: 18px;
+    height: 24px;
+    width: 24px;
+}
+
+@media (max-width: 1025px) {
+    .navbar-main {height: 50px;}
+    .navbar-logo {
+        height: 29px;
+        width: 95px;
+        background-position: bottom;
+        background-size: 95px calc(29px*34);
+        animation: none;
+    }
+    .navbar-tablist-container {display: none;}
+    .navbar-search {display: none;}
+    .navbar-searchbox {
+        background-color: transparent;
+        padding: 0px;
+    }
+    .navbar-menu-icon {display: block;}
+    .navbar-user-container {display: none;}
+}

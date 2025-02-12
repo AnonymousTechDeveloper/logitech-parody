@@ -24,7 +24,7 @@
 	user-select: none;
 }
 
-html {overflow-x: hidden;}
+html, body {overflow-x: hidden;}
 
 .title-bar {
 	color: #697172;
@@ -123,4 +123,19 @@ html {overflow-x: hidden;}
 		color: var(--main-color-light);
 		background-color: transparent;
 	}
+}
+
+.scroller-dot {
+    height: 12px;
+    width: 12px;
+    margin: 3px;
+    background-color: #000000;
+    border-radius: 100%;
+	transition: background-color 0.3s, border-color 0.3s;
+
+    &.active-page {
+        background-color: transparent;
+        border: 3px solid #000000;
+        margin: 0px;
+    }
 }

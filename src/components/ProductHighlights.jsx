@@ -41,24 +41,38 @@ function ProductHighlights() {
 	};
 
 	//TODO: Do something of this shit 
-	const scrollHandler = (event) => {
-		const initialXPos = event.x;
-		const xThreshold = 40;
-		const productCardContainer = event.target;
-		const leftSpace = (window.innerWidth - productCardContainer.innerWidth)/2;
-		window.addEventListener("mousemove", (event) => {
-			//console.log(event);
-		})
-		event.target.onmouseup = function(event) {
-			console.log(initialXPos)
+	const scrollHandler = (event, activeTabIndex) => {
+		const container = event.currentTarget;
+		const initialXPos = event.clientX;
+		const containerScrollLeft = container.scrollLeft;
+		const xThreshold = 100;
+		const syncContainerMouse = (event) => {
+			const xPos = event.x;
+			container.scrollLeft = event.offsetX//containerScrollLeft - xPos + initialXPos;
+			//container.scrollLeft = containerScrollLeft - xPos + initialXPos;
+		}
+		const scrollEndHandler = (event) => {
+			container.removeEventListener("mousemove", syncContainerMouse);
 			const finalXPos = event.x;
 			const deltaX = finalXPos - initialXPos;
-			console.log(deltaX, finalXPos, initialXPos)
-			if (Math.abs(finalXPos - initialXPos) > xThreshold) console.log("Scrolled!")
-			return finalXPos;
+			if (deltaX > xThreshold) {
+				const tempActivePageList = [...activePageList];
+				if (activePageList[activeTabIndex] != 0) tempActivePageList[activeTabIndex]--;
+				//else tempActivePageList[activeTabIndex] = numberofPages - 1;
+				setActivePageList(tempActivePageList);
+			} else if (-deltaX > xThreshold) {
+				const tempActivePageList = [...activePageList];
+				if (activePageList[activeTabIndex] != numberofPages - 1) tempActivePageList[activeTabIndex]++;
+				//else tempActivePageList[activeTabIndex] = 0;
+				setActivePageList(tempActivePageList);
+			}
 		}
-		event.target.addEventListener("mouseup", (event) => {
-		}, {once: true})
+
+		//container.addEventListener("mousemove", syncContainerMouse);
+		container.addEventListener("mouseup", scrollEndHandler, {once: true})
+		container.addEventListener("mouseleave", (event) => {
+			container.removeEventListener("movemove", syncContainerMouse);
+		}, {once: true});
 	}
 
 	return (
@@ -81,7 +95,7 @@ function ProductHighlights() {
 						)
 					}
 				</div>
-				<div className='product-hls-tab-content' onMouseDown={(event) => scrollHandler(event)}>
+				<div className='product-hls-tab-content' onMouseDown={(event) => scrollHandler(event, activeTabIndex)}>
 					{
 						renderProductList.map((product, prodIndex, prodList) => 
 							<div className='product-hls-card'>
@@ -122,7 +136,7 @@ function ProductHighlights() {
 					{
 						Array(numberofPages).fill().map((value, pageIndex, list) => 
 							<div 
-								className={`product-hls-scroll ${pageIndex == activePageList[activeTabIndex] ? 'active-page' : null}`}
+								className={`scroller-dot ${pageIndex == activePageList[activeTabIndex] ? 'active-page' : null}`}
 								onClick={() => {
 									const tempPageList = [...activePageList];
 									tempPageList[activeTabIndex] = pageIndex;
