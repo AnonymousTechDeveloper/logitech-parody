@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/logitech-parody/static/css/main.66965169.css",
-    "main.js": "/logitech-parody/static/js/main.6e64520a.js",
+    "main.js": "/logitech-parody/static/js/main.4b9d3b97.js",
     "static/js/488.02eb4d06.chunk.js": "/logitech-parody/static/js/488.02eb4d06.chunk.js",
     "static/media/carousel_image_tablet5.jpg": "/logitech-parody/static/media/carousel_image_tablet5.52befa9f62f3ec5972aa.jpg",
     "static/media/carousel_image_desktop8.jpg": "/logitech-parody/static/media/carousel_image_desktop8.ec47d3798bdaeba6251c.jpg",
@@ -45,6 +45,8 @@
     "static/media/pebble-2-combo-top-tonal-rose-gallery-us.webp": "/logitech-parody/static/media/pebble-2-combo-top-tonal-rose-gallery-us.69dc9b576fd4dc8a50c5.webp",
     "static/media/pebble-2-combo-top-tonal-white-gallery-us.webp": "/logitech-parody/static/media/pebble-2-combo-top-tonal-white-gallery-us.63e0133838003c10eb81.webp",
     "static/media/zone-300-rose-2.webp": "/logitech-parody/static/media/zone-300-rose-2.3979a748d132bfdcdf6e.webp",
+    "static/media/streamlabs-grey.svg": "/logitech-parody/static/media/streamlabs-grey.c08512aabc272235350e2595445ba489.svg",
+    "static/media/streamlabs.svg": "/logitech-parody/static/media/streamlabs.281947fb8ef1dfab185246125d9f4ac3.svg",
     "static/media/zone-300-offwhite-2.webp": "/logitech-parody/static/media/zone-300-offwhite-2.0c03c2b607c1435da77b.webp",
     "static/media/combo-touch-ipad-pro-11-inch-oxford-grey-gallery1.webp": "/logitech-parody/static/media/combo-touch-ipad-pro-11-inch-oxford-grey-gallery1.b41cfba852a996e6421b.webp",
     "static/media/us-int-combo-touch-ipad-air-11-inch-gallery1.webp": "/logitech-parody/static/media/us-int-combo-touch-ipad-air-11-inch-gallery1.ee452e7054e3d32049c3.webp",
@@ -88,6 +90,8 @@
     "static/media/mx-anywhere-3s-mouse-top-view-rose.webp": "/logitech-parody/static/media/mx-anywhere-3s-mouse-top-view-rose.1a471b300369576651e7.webp",
     "static/media/wave-keys-fob-off-white-gallery-us.webp": "/logitech-parody/static/media/wave-keys-fob-off-white-gallery-us.0bd764ba63950430ce32.webp",
     "static/media/lift-gallery-graphite-2.webp": "/logitech-parody/static/media/lift-gallery-graphite-2.36a606b717017f7b02c5.webp",
+    "static/media/ultimate-ears-grey.svg": "/logitech-parody/static/media/ultimate-ears-grey.95ea0a3f2a61255e075bd86098c7e861.svg",
+    "static/media/ultimate-ears.svg": "/logitech-parody/static/media/ultimate-ears.27dfc5608bd162f09a45c963e6cb2eac.svg",
     "static/media/lift-gallery-graphite-1.webp": "/logitech-parody/static/media/lift-gallery-graphite-1.5327636c2a1a719ca14b.webp",
     "static/media/mx-anywhere-3s-mac-pale-grey-gallery-01-us.webp": "/logitech-parody/static/media/mx-anywhere-3s-mac-pale-grey-gallery-01-us.84c82e8ddf9029562a07.webp",
     "static/media/mx-mechanical-keyboard-top-side-view-graphite-us.webp": "/logitech-parody/static/media/mx-mechanical-keyboard-top-side-view-graphite-us.1d1f6b1bb459ebd524f2.webp",
@@ -96,14 +100,16 @@
     "static/media/wave-keys-top-graphite-gallery-us.webp": "/logitech-parody/static/media/wave-keys-top-graphite-gallery-us.5c653ab4e524a4052bfc.webp",
     "static/media/mx-keys-s-combo-keyboard-front-view-graphite-us.webp": "/logitech-parody/static/media/mx-keys-s-combo-keyboard-front-view-graphite-us.b9b1ef96a7404c06287e.webp",
     "static/media/mx-mechanical-keyboard-top-view-graphite-us.webp": "/logitech-parody/static/media/mx-mechanical-keyboard-top-view-graphite-us.8a099662f77dd831387b.webp",
+    "static/media/logitechg-grey.svg": "/logitech-parody/static/media/logitechg-grey.abe8e786763f0d345b9b661ef5787f39.svg",
+    "static/media/logitechg.svg": "/logitech-parody/static/media/logitechg.369dfcf5e16ad7d1d1d1d0387b38c106.svg",
     "static/media/pcr-icon.webp": "/logitech-parody/static/media/pcr-icon.cc5de99f15521d5338ff.webp",
     "index.html": "/logitech-parody/index.html",
     "main.66965169.css.map": "/logitech-parody/static/css/main.66965169.css.map",
-    "main.6e64520a.js.map": "/logitech-parody/static/js/main.6e64520a.js.map",
+    "main.4b9d3b97.js.map": "/logitech-parody/static/js/main.4b9d3b97.js.map",
     "488.02eb4d06.chunk.js.map": "/logitech-parody/static/js/488.02eb4d06.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66965169.css",
-    "static/js/main.6e64520a.js"
+    "static/js/main.4b9d3b97.js"
   ]
 }
