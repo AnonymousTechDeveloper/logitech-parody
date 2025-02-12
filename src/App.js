@@ -22,7 +22,7 @@ function App() {
 	//const [navbarState, setNavbarState] = useState(1);
 	const mobileBreakpointWidth = 1025;
 	const hamburgerRenderBreakpointWidth = 715;
-	const [hamburgerState, setHamburgerState] = useState(0);
+	const [hamburgerState, setHamburgerState] = useState(window.innerWidth < hamburgerRenderBreakpointWidth ? 1 : 0);
 	const [titleBarLogoHovered, settitleBarLogoHovered] = useState(0);
 	const [brandDDSteamLabsLogoHovered, setBrandDDSteamLabsLogoHovered] = useState(0);
 	const [brandDDUltimateEarsLogoHovered, setBrandDDUltimateEarsLogoHovered] = useState(0);
