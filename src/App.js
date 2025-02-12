@@ -10,6 +10,12 @@ import ProductHighlights from './components/ProductHighlights';
 import ShopSeries from './components/ShopSeries';
 import ProductHighlightsMobile from './components/ProductHighlightsMobile';
 import MainCarousel from './components/MainCarousel';
+import mainLogo from './icons/logitechg.svg';
+import mainLogoGrey from './icons/logitechg-grey.svg';
+import streamlabsLogo from './icons/streamlabs.svg';
+import streamlabsLogoGrey from './icons/streamlabs-grey.svg';
+import ultimateLabsLogo from './icons/ultimate-ears.svg';
+import ultimateLabsLogoBlue from './icons/ultimate-ears-grey.svg';
 
 function App() {
 
@@ -49,9 +55,9 @@ function App() {
 						<span onMouseEnter={() => settitleBarLogoHovered(1)} onMouseLeave={() => settitleBarLogoHovered(0)}>
 							{
 								titleBarLogoHovered ? 
-								<img className='y-centered' src='/icons/logitechg.svg'></img>
+								<img className='y-centered' src={mainLogo}></img>
 								: 
-								<img className='y-centered' src='/icons/logitechg-grey.svg'></img>
+								<img className='y-centered' src={mainLogoGrey}></img>
 							}
 						</span>
 						<hr />
@@ -72,17 +78,17 @@ function App() {
 									<div className="brand-ddown-item" onMouseEnter={() => setBrandDDSteamLabsLogoHovered(1)} onMouseLeave={() => setBrandDDSteamLabsLogoHovered(0)}>
 										{
 											brandDDSteamLabsLogoHovered ? 
-											<img src='/icons/streamlabs.svg'></img> 
+											<img src={streamlabsLogo}></img> 
 											:
-											<img src='/icons/streamlabs-grey.svg'></img>
+											<img src={streamlabsLogoGrey}></img>
 										}
 									</div>
 									<div className="brand-ddown-item" onMouseEnter={() => setBrandDDUltimateEarsLogoHovered(1)} onMouseLeave={() => setBrandDDUltimateEarsLogoHovered(0)}>
 										{
 											brandDDUltimateEarsLogoHovered ? 
-											<img src='/icons/ultimate-ears.svg'></img> 
+											<img src={ultimateLabsLogo}></img> 
 											:
-											<img src='/icons/ultimate-ears-grey.svg'></img>
+											<img src={ultimateLabsLogoBlue}></img>
 										}
 									</div>
 								</div> : null
